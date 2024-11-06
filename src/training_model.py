@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 from keras.utils import to_categorical
 from helpers import get_word_ids, get_sequences_and_labels
 from constants import *
+
 def training_model(model_path, epochs=500):
     word_ids = get_word_ids(WORDS_JSON_PATH ) # ['word1', 'word2', 'word3]
     
