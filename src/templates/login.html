@@ -56,6 +56,7 @@
         <div class="col-md-6 login-form">
             <h2 class="text-center mb-4">Login</h2>
             <form action="/login" method="POST">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"> 
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="email" name="email" required>
@@ -67,6 +68,21 @@
                 <button type="submit" class="btn btn-primary w-100">Login</button>
                 <a>Registrate</a>
                 <a>Recupera tu contraseña</a>
+                <div>
+                    <p id="output-text">
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                <br>
+                                {% for message in messages %}
+                                    <div>
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                    </p>
+                </div>
+
             </form>
         </div>
     </div>
