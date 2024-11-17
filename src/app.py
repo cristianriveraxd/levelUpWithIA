@@ -135,11 +135,9 @@ def is_okay(landmarks):
 
 
 
-app = Flask(__name__)
-#Logica de inicio
-@app.route('/')
-def login():
-   login_back. load_user()
+app = create_app()
+if __name__ == "__main__":
+    app.run(debug=True)
 
 
 #Logica de login
