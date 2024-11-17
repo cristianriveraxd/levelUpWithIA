@@ -3,6 +3,7 @@ import numpy as np
 import cv2
 import mediapipe as mp
 from Detector import Detector
+import login_back
 
 gesture_detector = Detector(num_frames_to_track=5, movement_threshold=10)
 
@@ -138,7 +139,8 @@ app = Flask(__name__)
 #Logica de inicio
 @app.route('/')
 def login():
-    return render_template('login.html')
+   login_back. load_user()
+
 
 #Logica de login
 @app.route('/login', methods=['POST'])
