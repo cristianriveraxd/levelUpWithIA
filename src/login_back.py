@@ -63,7 +63,6 @@ def logout():
     return redirect(url_for('index'))
 
 
-if __name__ == "__main__":
-    app.secret_key = '123456789'
+def create_app():
     csrf.init_app(app)
-    app.run(debug=True)
+    return app
